@@ -6,7 +6,13 @@ In this image, H2 is embedded and used as the default database for Silverpeas. N
 
 ## Image creation
 
-To create an image of Silverpeas 6 you have to specify the exact versions of Silverpeas and of Wildfly used for running it in this order:
+To create an image of the latest version of Silverpeas 6:
+```
+$ ./build.sh
+```
+this will build an image containing the latest SNAPSHOT version of Silverpeas and the latest version of Wildfly supported by Silverpeas, with the tag silverpeas-test:latest.
+
+Otherwise, to create an image of a given version of Silverpeas 6, you have to specify as argument both the exact version of Silverpeas and of Wildfly used by this version:
 ```
 $ ./build.sh 6.0 10.0.0
 ```

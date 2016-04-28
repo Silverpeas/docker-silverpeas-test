@@ -2,11 +2,11 @@ FROM debian:jessie-backports
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
-LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas"
-
 ARG SILVERPEAS_VERSION=6.0-SNAPSHOT
 ARG WILDFLY_VERSION=10.0.0
 ARG DEFAULT_LOCALE=en_US.UTF-8
+
+LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
 
 #
 # Check Silvereas and Wildfly at the asked version exist
