@@ -22,16 +22,16 @@ This will build an image containing Silverpeas 6.0 (not yet available) and Wildf
 
 [data-volume]: https://docs.docker.com/engine/userguide/containers/dockervolumes/
 
-To run a container `silverpeas-test` from the image previously created, just do:
+To run a container `silverpeas-test` from an image, just do:
 ```
-$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test-6.0
+$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test
 ```
 The image exposes the 8000 port at which Silverpeas listens, and this port of the container is mapped to the 8080 port of the host.
 
 When the container is instanciated from the image, a configuration step is performed before starting Silverpeas. 
 If you have no custom configurations to apply before running Silverpeas, you can avoid this step by starting directly Silverpeas:
 ```
-$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test-6.0 start
+$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test start
 ```
 
 ### Keep data out of the container
@@ -45,7 +45,7 @@ $ docker run --name silverpeas-test -p 8080:8000 -d \
   -v /home/me/silverpeas/log:/opt/silverpeas/log \
   -v /home/me/silverpeas/data:/opt/silverpeas/data \
   -v /home/me/silverpeas/h2:/opt/silverpeas/h2 \
-  silverpeas-test:6.0
+  silverpeas-test
 ```
 
 ### Custom configuration
@@ -65,7 +65,7 @@ mount it to the container:
 ```
 $ docker run --name silverpeas-test -p 8080:8000 -d \
   -v /home/me/silverpeas/custom_config.properties:/opt/silverpeas/configuration/custom_config.properties \
-  silverpeas-test-6.0
+  silverpeas-test
 ```
 (Warning: don't shift the configuration step if you want the `custom_config.properties` to be taken into account.)
 
