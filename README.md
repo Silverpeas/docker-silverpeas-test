@@ -1,4 +1,4 @@
-#docker-silverpeas-test
+# docker-silverpeas-test
 
 A Dockerfile that produces a standalone Docker image of [Silverpeas 6][silverpeas] for testing purpose.
 In this image, H2 is embedded and used as the default database for Silverpeas. No dependencies on other containers are required for its running.
@@ -68,4 +68,13 @@ $ docker run --name silverpeas-test -p 8080:8000 -d \
   silverpeas-test-6.0
 ```
 (Warning: don't shift the configuration step if you want the `custom_config.properties` to be taken into account.)
+
+## Logs
+
+You can follow the activity of Silverpeas by watching the logs generated in the mounted `/opt/silverpeas/log` directory.
+
+The output of Wildfly is redirected into the container standard output and as such it can be watched as following:
+```
+$ docker logs -f silverpeas
+```
 
