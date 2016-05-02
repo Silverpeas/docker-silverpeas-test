@@ -2,7 +2,7 @@ FROM debian:jessie-backports
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
-ARG SILVERPEAS_VERSION=6.0-SNAPSHOT
+ARG SILVERPEAS_VERSION=6.0-alpha1
 ARG WILDFLY_VERSION=10.0.0
 ARG DEFAULT_LOCALE=en_US.UTF-8
 
@@ -105,19 +105,19 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
 
 # Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
-COPY settings.xml ${HOME}/.m2/
+COPY src/settings.xml ${HOME}/.m2/
 
 # Copy the database configuration parameters from which the global configuration config.properties
 # will be generated
-COPY db_config.properties ${SILVERPEAS_HOME}/configuration/
+COPY src/db_config.properties ${SILVERPEAS_HOME}/configuration/
 RUN cp ${SILVERPEAS_HOME}/configuration/db_config.properties ${SILVERPEAS_HOME}/configuration/config.properties
 
 # Set the default working directory
 WORKDIR ${SILVERPEAS_HOME}/bin
 
 # Copy this container init script that will be run each time the container is ran
-COPY run.sh /opt/
-COPY ooserver /opt/
+COPY src/run.sh /opt/
+COPY src/ooserver /opt/
 
 # Assemble the Silverpeas application with its working directories and marks it as ready to complete
 # the installation of Silverpeas in Wildfly at first run

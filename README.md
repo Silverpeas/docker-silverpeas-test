@@ -2,7 +2,11 @@
 
 A Dockerfile that produces a standalone Docker image of [Silverpeas 6][silverpeas] for testing purpose.
 In this image, H2 is embedded and used as the default database for Silverpeas. No dependencies on other containers are required for its running.
+
+Ready-to-use docker images of Silverpeas for testing purpose are available in our [Docker Hub repository][dockerhub]
+
 [silverpeas]: http://www.silverpeas.org
+[dockerhub]: https://hub.docker.com/r/silverpeas/silverpeas-test/
 
 ## Image creation
 
@@ -16,22 +20,20 @@ Otherwise, to create an image of a given version of Silverpeas 6, you have to sp
 ```
 $ ./build.sh 6.0 10.0.0
 ```
-This will build an image containing Silverpeas 6.0 (not yet available) and Wildfly 10.0.0 with the tag `silverpeas-test-6.0`. The versions passed as argument have to match the versions of Silverpeas and Wildfly available in the Web; indeed, Silverpeas and Wildfly will be downloaded from their respective project Web site.
+This will build an image containing Silverpeas 6.0 (not yet available) and Wildfly 10.0.0 with the tag `silverpeas/silverpeas-test-6.0`. The versions passed as argument have to match the versions of Silverpeas and Wildfly available in the Web; indeed, Silverpeas and Wildfly will be downloaded from their respective project Web site.
 
 ## Container running
 
-[data-volume]: https://docs.docker.com/engine/userguide/containers/dockervolumes/
-
 To run a container `silverpeas-test` from an image, just do:
 ```
-$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test
+$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas/silverpeas-test
 ```
 The image exposes the 8000 port at which Silverpeas listens, and this port of the container is mapped to the 8080 port of the host.
 
 When the container is instanciated from the image, a configuration step is performed before starting Silverpeas. 
 If you have no custom configurations to apply before running Silverpeas, you can avoid this step by starting directly Silverpeas:
 ```
-$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas-test start
+$ docker run --name silverpeas-test -p 8080:8000 -d silverpeas/silverpeas-test start
 ```
 
 ### Keep data out of the container
@@ -45,7 +47,7 @@ $ docker run --name silverpeas-test -p 8080:8000 -d \
   -v /home/me/silverpeas/log:/opt/silverpeas/log \
   -v /home/me/silverpeas/data:/opt/silverpeas/data \
   -v /home/me/silverpeas/h2:/opt/silverpeas/h2 \
-  silverpeas-test
+  silverpeas/silverpeas-test
 ```
 
 ### Custom configuration
@@ -65,7 +67,7 @@ mount it to the container:
 ```
 $ docker run --name silverpeas-test -p 8080:8000 -d \
   -v /home/me/silverpeas/custom_config.properties:/opt/silverpeas/configuration/custom_config.properties \
-  silverpeas-test
+  silverpeas/silverpeas-test
 ```
 (Warning: don't shift the configuration step if you want the `custom_config.properties` to be taken into account.)
 

@@ -7,10 +7,10 @@ if [ $# -eq 2 ]; then
   docker build \
     --build-arg SILVERPEAS_VERSION=$silverpeas_version \
     --build-arg WILDFLY_VERSION=$wildfly_version \
-    -t silverpeas-test:$silverpeas_version \
+    -t silverpeas/silverpeas-test:$silverpeas_version \
     .
 else
   docker build \
-    -t silverpeas-test:latest \
+    -t silverpeas/silverpeas-test:latest \
     .
 fi
