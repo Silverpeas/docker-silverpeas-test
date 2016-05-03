@@ -8,6 +8,10 @@
 configure_silverpeas() {
   echo "Generate ${SILVERPEAS_HOME}/configuration/config.properties..."
   cp ${SILVERPEAS_HOME}/configuration/db_config.properties ${SILVERPEAS_HOME}/configuration/config.properties
+  if [ "Z${locale}" != "Z" ]; then
+    echo "SILVERPEAS_USER_LANGUAGE=${locale}" >> ${SILVERPEAS_HOME}/configuration/config.properties
+    echo "SILVERPEAS_CONTENT_LANGUAGES=${locale}" >> ${SILVERPEAS_HOME}/configuration/config.properties
+  fi
   if [ -f ${SILVERPEAS_HOME}/configuration/custom_config.properties ]; then
     sed -ie "s/DB_.*$//g" /configuration/custom_config.properties
     cat ${SILVERPEAS_HOME}/configuration/custom_config.properties >> ${SILVERPEAS_HOME}/configuration/config.properties

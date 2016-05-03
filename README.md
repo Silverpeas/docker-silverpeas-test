@@ -14,7 +14,7 @@ To create an image of the latest version of Silverpeas 6:
 ```
 $ ./build.sh
 ```
-this will build an image containing the latest SNAPSHOT version of Silverpeas and the latest version of Wildfly supported by Silverpeas, with the tag silverpeas-test:latest.
+this will build an image containing the latest SNAPSHOT version of Silverpeas and the latest version of Wildfly supported by Silverpeas, with the tag `silverpeas/silverpeas-test:latest`.
 
 Otherwise, to create an image of a given version of Silverpeas 6, you have to specify as argument both the exact version of Silverpeas and of Wildfly used by this version:
 ```
@@ -30,17 +30,23 @@ $ docker run --name silverpeas-test -p 8080:8000 -d silverpeas/silverpeas-test
 ```
 The image exposes the 8000 port at which Silverpeas listens, and this port of the container is mapped to the 8080 port of the host.
 
-When the container is instanciated from the image, a configuration step is performed before starting Silverpeas. 
+When the container is spawn from the image, a configuration step is performed before starting Silverpeas. 
 If you have no custom configurations to apply before running Silverpeas, you can avoid this step by starting directly Silverpeas:
 ```
 $ docker run --name silverpeas-test -p 8080:8000 -d silverpeas/silverpeas-test start
 ```
 
+By default, the locale in Silverpeas is in French. To have instead the locale in English:
+```
+$ docker run --name silverpeas-test -p 8080:8000 -d -e locale=en silverpeas/silverpeas-test
+```
+this will configure Silverpeas by settings its default locale to English.
+
 ### Keep data out of the container
 
 By default, the data are stored into the container and then they can be lost once the container removed. 
 To share the data with others containers running Silverpeas or to keep them out of a container, you can mount the volumes `/opt/silverpeas/data` and `/opt/silverpeas/h2` on the host.
-You can also mount the volume `/opt/silverpeas/log` in order to glance at the Silverpeas activity through the logs files.
+You can also mount the volume `/opt/silverpeas/log` in order to glance at the logs.
 For example:
 ```
 $ docker run --name silverpeas-test -p 8080:8000 -d \
@@ -52,9 +58,12 @@ $ docker run --name silverpeas-test -p 8080:8000 -d \
 
 ### Custom configuration
 
-In the case you whish to set some specific configuration parameters in the global Silverpeas configuration file `config.properties`, set them into a `custom_config.properties` configuration file and then mount it as `/opt/silverpeas/configuration/custom_config.properties` in the container.
-For example, to set the SMTP properties to receive notifications by email, in a `custom_config.properties` file:
+In the case you wish to set some specific configuration parameters in the global Silverpeas configuration file `config.properties`, set them into a `custom_config.properties` configuration file on the host and then mount it as `/opt/silverpeas/configuration/custom_config.properties` in the container.
+For example, to set the SMTP properties to receive email notifications, in a `custom_config.properties` file:
 ```
+SILVERPEAS_USER_LANGUAGE=en
+SILVERPEAS_CONTENT_LANGUAGES=en fr
+
 SMTP_SERVER=smtp.googlemail.com
 SMTP_AUTHENTICATION=true
 SMTP_DEBUG=false
