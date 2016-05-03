@@ -61,9 +61,6 @@ $ docker run --name silverpeas-test -p 8080:8000 -d \
 In the case you wish to set some specific configuration parameters in the global Silverpeas configuration file `config.properties`, set them into a `custom_config.properties` configuration file on the host and then mount it as `/opt/silverpeas/configuration/custom_config.properties` in the container.
 For example, to set the SMTP properties to receive email notifications, in a `custom_config.properties` file:
 ```
-SILVERPEAS_USER_LANGUAGE=en
-SILVERPEAS_CONTENT_LANGUAGES=en fr
-
 SMTP_SERVER=smtp.googlemail.com
 SMTP_AUTHENTICATION=true
 SMTP_DEBUG=false
