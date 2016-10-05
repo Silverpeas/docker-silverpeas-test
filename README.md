@@ -14,7 +14,7 @@ To create an image of the latest version of Silverpeas 6:
 ```
 $ ./build.sh
 ```
-this will build an image containing the latest SNAPSHOT version of Silverpeas and the latest version of Wildfly supported by Silverpeas, with the tag `silverpeas/silverpeas-test:latest`.
+this will build an image containing the latest pre-version of Silverpeas and the latest version of Wildfly supported by Silverpeas, with the tag `silverpeas/silverpeas-test:latest`.
 
 Otherwise, to create an image of a given version of Silverpeas 6, you have to specify as argument both the exact version of Silverpeas and of Wildfly used by this version:
 ```

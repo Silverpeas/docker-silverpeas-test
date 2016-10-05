@@ -2,7 +2,7 @@ FROM debian:jessie-backports
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
-ARG SILVERPEAS_VERSION=6.0-alpha1
+ARG SILVERPEAS_VERSION=6.0-alpha2
 ARG WILDFLY_VERSION=10.0.0
 ARG DEFAULT_LOCALE=en_US.UTF-8
 
