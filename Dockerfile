@@ -1,74 +1,50 @@
-FROM debian:jessie-backports
+FROM ubuntu:xenial
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
-ARG SILVERPEAS_VERSION=6.0-alpha2
-ARG WILDFLY_VERSION=10.0.0
-ARG DEFAULT_LOCALE=en_US.UTF-8
-
-LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=2
-
-#
-# Check Silvereas and Wildfly at the asked version exist
-#
-
-RUN echo -n "Check build argument SILVERPEAS_VERSION: " && echo ${SILVERPEAS_VERSION} && test ! -z ${SILVERPEAS_VERSION}
-RUN echo -n "Check build argument WILDFLY_VERSION: " && echo ${WILDFLY_VERSION} && test ! -z ${WILDFLY_VERSION}
-
-RUN apt-get update && apt-get install -y wget
-
-RUN wget --spider https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
-  && wget --spider https://www.silverpeas.org/files/wildfly-${WILDFLY_VERSION}.Final.zip
+ENV TERM=xterm
 
 #
 # Install required and recommended programs for Silverpeas
 #
 
-# Installation of OpenJDK 8, ImageMagick, Ghostscript, LibreOffice, and then
+# Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 RUN apt-get update && apt-get install -y \
+    wget \
     locales \
+    procps \
+    net-tools \
     zip \
     unzip \
-    openjdk-8-jdk \ 
-    build-essential \
-    autoconf \
-    zlib1g-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
+    openjdk-8-jdk \
+    ffmpeg \
     imagemagick \
     ghostscript \
     libreoffice \
     ure \
     gpgv \
-  && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && update-ca-certificates -f
 
-# Fetch the last stable version of SWFTools, build it and install it
-RUN wget -nc http://www.swftools.org/swftools-0.9.2.tar.gz \
-  && tar zxvf swftools-0.9.2.tar.gz \
-  && cd swftools-0.9.2 \
-  && ./configure \
-  && sed -i -e 's/rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
-  && sed -i -e 's/rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
-  && make && make install \
-  && cd .. \
-  && rm -rf swftools-0.9.2*
+# Fetch and install SWFTools
+RUN wget -nc https://www.silverpeas.org/files/swftools-bin-0.9.2.zip \
+  && echo 'd40bd091c84bde2872f2733a3c767b3a686c8e8477a3af3a96ef347cf05c5e43 *swftools-bin-0.9.2.zip' | sha256sum - \
+  && unzip swftools-bin-0.9.2.zip -d / \
+  && rm swftools-bin-0.9.2.zip
 
-# Fetch the last stable version of PDF2JSON, build it and install it
-RUN wget -nc https://github.com/flexpaper/pdf2json/releases/download/v0.68/pdf2json-0.68.tar.gz \
-  && mkdir pdf2json \
-  && tar zxvf pdf2json-0.68.tar.gz -C pdf2json \
-  && cd pdf2json \
-  && ./configure \
-  && make && make install \
-  && cd .. \
-  && rm -rf pdf2json*
+# Fetch and install PDF2JSON
+RUN wget -nc https://www.silverpeas.org/files/pdf2json-bin-0.68.zip \
+  && echo 'eec849cdd75224f9d44c0999ed1fbe8764a773d8ab0cf7fff4bf922ab81c9f84 *pdf2json-bin-0.68.zip' | sha256sum - \
+  && unzip pdf2json-bin-0.68.zip -d / \
+  && rm pdf2json-bin-0.68.zip
 
 #
 # Set up environment to install and to run Silverpeas
 #
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+ARG DEFAULT_LOCALE=en_US.UTF-8
 
 # Generate locales and set the default one
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
@@ -81,19 +57,23 @@ ENV LANG ${DEFAULT_LOCALE}
 ENV LANGUAGE ${DEFAULT_LOCALE}
 ENV LC_ALL ${DEFAULT_LOCALE}
 
+#
+# Install Silverpeas and Wildfly
+#
+
 # Set up environment variables for Silverpeas
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-#
-# Install Silverpeas and Wildfly
-#
+ARG SILVERPEAS_VERSION=6.0-alpha2
+ARG WILDFLY_VERSION=10.1.0
+LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=3
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
   && wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc \
-  && gpg --keyserver hkp://pgp.mit.edu --recv-keys 3DF442B6 \
+  && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 3F4657EF9C591F2FEA458FEBC19391EB3DF442B6 \
   && gpg --batch --verify silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip.asc silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
   && wget -nc http://download.jboss.org/wildfly/${WILDFLY_VERSION}.Final/wildfly-${WILDFLY_VERSION}.Final.zip \
   && unzip silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip -d /opt \
@@ -101,16 +81,12 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
   && mv /opt/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?} /opt/silverpeas \
   && mv /opt/wildfly-${WILDFLY_VERSION}.Final /opt/wildfly \
   && rm *.zip \
-  && mkdir -p ${HOME}/.m2 \
+  && mkdir -p /root/.m2
 
-# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from
 # the Silverpeas Nexus Repository
-COPY src/settings.xml ${HOME}/.m2/
-
-# Copy the database configuration parameters from which the global configuration config.properties
-# will be generated
-COPY src/db_config.properties ${SILVERPEAS_HOME}/configuration/
-RUN cp ${SILVERPEAS_HOME}/configuration/db_config.properties ${SILVERPEAS_HOME}/configuration/config.properties
+COPY src/settings.xml /root/.m2/
+COPY src/config.properties /opt/silverpeas/configuration/
 
 # Set the default working directory
 WORKDIR ${SILVERPEAS_HOME}/bin
@@ -119,10 +95,10 @@ WORKDIR ${SILVERPEAS_HOME}/bin
 COPY src/run.sh /opt/
 COPY src/ooserver /opt/
 
-# Assemble the Silverpeas application with its working directories and marks it as ready to complete
-# the installation of Silverpeas in Wildfly at first run
+# Assemble Silverpeas
 RUN ./silverpeas clean install \
-  && rm ../log/build-* 
+  && rm ../log/build-* \
+  && touch .install
 
 #
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
@@ -131,8 +107,10 @@ RUN ./silverpeas clean install \
 
 # Silverpeas listens port 8000 by default
 EXPOSE 8000 9990
-# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
-# or the configuration of Silverpeas outside the container
+
+# The following Silverpeas folders are exposed by default so that you can access outside the container the logs,
+# the data, and the workflow definitions that are produced in Silverpeas.
 VOLUME ["/opt/silverpeas/log", "/opt/silverpeas/data", "/opt/silverpeas/h2"]
-ENTRYPOINT ["/opt/run.sh"]
-CMD ["configure", "start"]
+
+# What to execute by default when running the container
+CMD ["/opt/run.sh"]
