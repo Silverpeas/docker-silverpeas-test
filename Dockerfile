@@ -85,6 +85,7 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
 
 # Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from
 # the Silverpeas Nexus Repository
+COPY src/repository /root/.m2/repository
 COPY src/settings.xml /root/.m2/
 COPY src/config.properties /opt/silverpeas/configuration/
 

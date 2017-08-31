@@ -74,7 +74,7 @@ the volume).
 
 In the case you wish to set some specific configuration parameters in the global Silverpeas 
 configuration file `config.properties`, set them into a `custom_config.properties` configuration 
-file on the host and then map to it a `/opt/silverpeas/configuration/custom_config.properties` file 
+file on the host and then map it to a `/opt/silverpeas/configuration/custom_config.properties` file 
 in the container.
 For example, to set the SMTP properties to receive email notifications, you add them into a 
 `custom_config.properties` file (for our example, in your home `/home/me`):
@@ -96,6 +96,39 @@ then you map it to the container:
 The custom configuration file will be then parsed to add each parameters into the global Silverpeas
 configuration file.
 
+### Custom Silverpeas settings
+
+The Silverpeas core engines as well as the Silverpeas applications can be customized by their 
+settings in the `/opt/silverpeas/properties` directory. For historical reason, the customization of
+such settings are performed by an XML script `CustomerSettings.xml` that follows the syntax of the
+main `00-SilverpeasSettings.xml` script in `/opt/silverpeas/configuration/silverpeas` directory. If
+you wish to customize some of the Silverpeas settings, you can do it through either a 
+`CustomSettings.xml` file or a `CustomerSettings.xml` file and then map it to the same file in the
+`/opt/silverpeas/configuration/silverpeas/` directory in the container.
+For example, to set weaker rules for passwords, you can set them into such an XML file (located for
+example in your home `/home/me`):
+  
+    <?xml version="1.0" encoding="UTF-8"?>
+    <silverpeas-settings product="custom">
+      <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas">
+        <configfile name="password/settings/password.properties">
+          <parameter key="password.rule.minLength">4</parameter>
+          <parameter key="password.rule.blankForbidden">false</parameter>
+          <parameter key="password.rule.sequentialForbidden">false</parameter>
+          <parameter key="password.rule.atLeastXUppercase">false</parameter>
+          <parameter key="password.rule.atLeastXLowercase">false</parameter>
+          <parameter key="password.rule.atLeastXDigit">false</parameter>
+          <parameter key="password.rule.atLeastXSpecialChar">false</parameter>
+        </configfile>
+      </fileset>
+    </silverpeas-settings>
+
+then you map it to the container:
+
+	$ docker run --name silverpeas-test -p 8080:8000 -d \
+	  -v /home/me/CustomSettings.xml:/opt/silverpeas/configuration/silverpeas/CustomSettings.xml \
+	  silverpeas/silverpeas-test
+
 ## Logs
 
 You can follow the activity of Silverpeas by watching the logs generated in the mounted 
@@ -106,3 +139,9 @@ watched as following:
 
 	$ docker logs -f silverpeas
 
+## For development purpose
+
+You can use this project to build a Silverpeas docker image with your own changes in the Silverpeas
+code. For doing, build the code of Silverpeas (at least both `Silverpeas-Core` and 
+`Silverpeas-Component`) with as Maven repository the `src/repository` directory. This folder will be
+then automatically used when building a test image of Silverpeas.

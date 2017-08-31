@@ -22,6 +22,10 @@ configure_silverpeas() {
     rm ${SILVERPEAS_HOME}/configuration/custom_config.fixed.properties
     configure=1
   fi
+  if [ -f ${SILVERPEAS_HOME}/configuration/silverpeas/CustomerSettings.xml ] || [ -f ${SILVERPEAS_HOME}/configuration/silverpeas/CustomSettings.xml ]; then
+    echo " -> custom settings detected in CustomerSettings.xml or CustomSettings.xml"
+    configure=1
+  fi
   if [ $configure -ne 0 ]; then
     ./silverpeas configure
   fi
