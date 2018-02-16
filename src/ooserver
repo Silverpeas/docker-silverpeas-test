@@ -4,7 +4,7 @@ DAEMON=/usr/lib/libreoffice/program/soffice.bin
 
 case $1 in
   start)
-    echo -n "OpenOffice service starting ..."; 
+    echo -n "LibreOffice service starting ...";
     pid=""
     while [ "Z$pid" = "Z" ]; do
       "$DAEMON" --nologo --norestore --invisible --headless --accept="socket,host=localhost,port=8100,tcpNoDelay=1;urp;" &
@@ -21,9 +21,9 @@ case $1 in
   status)
     pid=`pidof soffice.bin`
     if [ "Z$pid" = "Z" ]; then
-      echo "OpenOffice service is stopped"
+      echo "LibreOffice service is stopped"
     else
-      echo "OpenOffice service is started"
+      echo "LibreOffice service is started"
     fi 
     ;;
   *)

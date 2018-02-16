@@ -68,7 +68,7 @@ ENV JBOSS_HOME /opt/wildfly
 
 ARG SILVERPEAS_VERSION=6.0
 ARG WILDFLY_VERSION=10.1.0
-LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=4
+LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=5
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
@@ -88,6 +88,13 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
 COPY src/repository /root/.m2/repository
 COPY src/settings.xml /root/.m2/
 COPY src/config.properties /opt/silverpeas/configuration/
+COPY src/CustomerSettings.xml /opt/silverpeas/configuration/silverpeas/
+COPY src/99-confAuroraLooks.groovy /opt/silverpeas/configuration/silverpeas/
+COPY src/h2 /opt/silverpeas/h2
+COPY src/data /opt/silverpeas/data
+COPY src/silverpeas.gradle /opt/silverpeas/bin/
+
+RUN sed -i -e "s/APP_VER/${SILVERPEAS_VERSION}/g" /opt/silverpeas/bin/silverpeas.gradle
 
 # Set the default working directory
 WORKDIR ${SILVERPEAS_HOME}/bin
