@@ -21,8 +21,8 @@ both the exact version of Silverpeas and the exact version of Wildfly used by th
 
 	$ ./build.sh 6.0 10.1.0
 
-This will build a Docker image for Silverpeas 6.0 (not yet available) and with Wildfly 10.1.0 with 
-the tag `silverpeas/silverpeas-test-6.0`. The versions passed as argument have to match the 
+This will build a Docker image for Silverpeas 6.0 and with Wildfly 10.1.0 with 
+the tag `silverpeas/silverpeas-test:6.0`. The versions passed as argument have to match the 
 available versions of both Silverpeas and Wildfly; indeed, Silverpeas and Wildfly will be downloaded
 from their respective project Web site.
 
