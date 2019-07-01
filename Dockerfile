@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
@@ -66,8 +66,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.0.1
-ARG WILDFLY_VERSION=10.1.0
+ARG SILVERPEAS_VERSION=6.1
+ARG WILDFLY_VERSION=15.0.1
 LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
@@ -101,7 +101,6 @@ WORKDIR ${SILVERPEAS_HOME}/bin
 
 # Copy this container init script that will be run each time the container is ran
 COPY src/run.sh /opt/
-COPY src/ooserver /opt/
 
 # Assemble Silverpeas
 RUN ./silverpeas clean install \

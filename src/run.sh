@@ -33,7 +33,6 @@ configure_silverpeas() {
 
 start_silverpeas() {
   echo "Start Silverpeas..."
-  /opt/ooserver start
   ${JBOSS_HOME}/bin/standalone.sh -b 0.0.0.0 -c standalone-full.xml &
   local pids=`jobs -p`
   wait $pids
@@ -42,7 +41,6 @@ start_silverpeas() {
 stop_silverpeas() {
   echo "Stop Silverpeas..."
   ./silverpeas stop
-  /opt/ooserver stop
   local pids=`jobs -p`
   if [ "Z$pids" != "Z" ]; then
     kill $pids &> /dev/null
