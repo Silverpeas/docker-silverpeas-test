@@ -66,7 +66,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.1-build200607
+ARG SILVERPEAS_VERSION=6.1
 ARG WILDFLY_VERSION=18.0.1
 LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
 
@@ -101,11 +101,10 @@ WORKDIR ${SILVERPEAS_HOME}/bin
 
 # Copy this container init script that will be run each time the container is ran
 COPY src/run.sh /opt/
+COPY src/setup.sh ${SILVERPEAS_HOME}/bin
 
 # Assemble Silverpeas
-RUN ./silverpeas clean install \
-  && rm ../log/build-* \
-  && touch .install
+RUN ./setup.sh ${SILVERPEAS_VERSION}
 
 #
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
