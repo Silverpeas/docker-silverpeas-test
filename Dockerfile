@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
 
@@ -13,11 +13,14 @@ ENV TERM=xterm
 RUN apt-get update && apt-get install -y \
     wget \
     locales \
+    language-pack-en \
+    language-pack-fr \
+    tzdata \
     procps \
     net-tools \
     zip \
     unzip \
-    openjdk-8-jdk \
+    openjdk-11-jdk \
     ffmpeg \
     imagemagick \
     ghostscript \
@@ -62,12 +65,12 @@ ENV LC_ALL ${DEFAULT_LOCALE}
 #
 
 # Set up environment variables for Silverpeas
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.1
-ARG WILDFLY_VERSION=18.0.1
+ARG SILVERPEAS_VERSION=6.2-SNAPSHOT
+ARG WILDFLY_VERSION=20.0.1
 LABEL name="Silverpeas 6" description="An all-to-one image to run Silverpeas 6 for testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
