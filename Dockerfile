@@ -66,7 +66,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.1.1
+ARG SILVERPEAS_VERSION=6.1.2
 ARG WILDFLY_VERSION=18.0.1
 LABEL name="Silverpeas Test" description="An all-to-one image to run Silverpeas for demo/testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
 
