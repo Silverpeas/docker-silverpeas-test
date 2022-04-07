@@ -10,12 +10,17 @@ ENV TERM=xterm
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+  && apt-get install -y tzdata \
+  && apt-get install -y \
+    apt-utils \
+    iputils-ping \
+    curl \
     wget \
+    vim \
     locales \
     language-pack-en \
     language-pack-fr \
-    tzdata \
     procps \
     net-tools \
     zip \
