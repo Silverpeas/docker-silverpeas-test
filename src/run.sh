@@ -32,6 +32,8 @@ configure_silverpeas() {
 }
 
 start_silverpeas() {
+  ${SILVERPEAS_HOME}/bin/h2database start
+
   echo "Start Silverpeas..."
   ${JBOSS_HOME}/bin/standalone.sh -b 0.0.0.0 -c standalone-full.xml &
   local pids=`jobs -p`
@@ -45,6 +47,8 @@ stop_silverpeas() {
   if [ "Z$pids" != "Z" ]; then
     kill $pids &> /dev/null
   fi
+  
+  ${SILVERPEAS_HOME}/bin/h2database stop
 }
 
 trap 'stop_silverpeas' SIGTERM
