@@ -19,10 +19,10 @@ Wildfly supported by Silverpeas, with the tag `silverpeas/silverpeas-test:latest
 Otherwise, to create an image of a given version of Silverpeas 6, you have to specify as argument 
 both the exact version of Silverpeas and the exact version of Wildfly used by this version:
 
-	$ ./build.sh 6.1 18.0.1
+	$ ./build.sh 6.2.3 20.0.1
 
-This will build a Docker image for Silverpeas 6.1 and with Wildfly 18.0.1 with 
-the tag `silverpeas/silverpeas-test:6.1`. The versions passed as argument have to match the 
+This will build a Docker image for Silverpeas 6.2.3 and with Wildfly 20.0.1 with 
+the tag `silverpeas/silverpeas-test:6.2.3`. The versions passed as argument have to match the 
 available versions of both Silverpeas and Wildfly; indeed, Silverpeas and Wildfly will be downloaded
 from their respective project Web site.
 

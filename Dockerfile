@@ -97,12 +97,10 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
 # the Silverpeas Nexus Repository
 COPY src/repository /root/.m2/repository
 COPY src/settings.xml /root/.m2/
-COPY src/config.properties /opt/silverpeas/configuration/
-COPY src/CustomerSettings.xml /opt/silverpeas/configuration/silverpeas/
-COPY src/99-confAuroraLooks.groovy /opt/silverpeas/configuration/silverpeas/
 COPY src/h2 /opt/silverpeas/h2
+COPY src/configuration /opt/silverpeas/configuration
 COPY src/data /opt/silverpeas/data
-COPY src/silverpeas.gradle /opt/silverpeas/bin/
+COPY src/bin /opt/silverpeas/bin
 
 RUN sed -i -e "s/APP_VER/${SILVERPEAS_VERSION}/g" /opt/silverpeas/bin/silverpeas.gradle
 
@@ -111,7 +109,6 @@ WORKDIR ${SILVERPEAS_HOME}/bin
 
 # Copy this container init script that will be run each time the container is ran
 COPY src/run.sh /opt/
-COPY src/setup.sh ${SILVERPEAS_HOME}/bin
 
 # Assemble Silverpeas
 RUN ./setup.sh ${SILVERPEAS_VERSION}
