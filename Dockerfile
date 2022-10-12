@@ -76,7 +76,7 @@ ENV JBOSS_HOME /opt/wildfly
 
 ARG SILVERPEAS_VERSION=6.3
 ARG WILDFLY_VERSION=wildfly-26.1.2
-LABEL name="Silverpeas Test" description="An all-to-one image to run Silverpeas for demo/testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
+LABEL name="Silverpeas Test" description="An all-to-one image to run Silverpeas for demo/testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=2
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
