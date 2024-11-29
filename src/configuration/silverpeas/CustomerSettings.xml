@@ -3,8 +3,8 @@
 
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
     <configfile name="general.properties">
-      <parameter key="web.resource.js.get.minified.enabled">false</parameter>
-      <parameter key="web.resource.css.get.minified.enabled">false</parameter>
+      <parameter key="web.resource.js.get.minified.enabled">true</parameter>
+      <parameter key="web.resource.css.get.minified.enabled">true</parameter>
     </configfile>
     <configfile name="documentTemplate/settings/documentTemplate.properties">
       <parameter key="documentTemplate.enabled">true</parameter>
@@ -12,10 +12,92 @@
     <configfile name="util/i18n.properties">
       <parameter key="languages">fr,en,de</parameter>
     </configfile>
+    <configfile name="util/viewGenerator/settings/lookSettings.properties">
+      <parameter key="Initial">org.silverpeas.util.viewGenerator.settings.waves</parameter>
+      <parameter key="Waves">org.silverpeas.util.viewGenerator.settings.waves</parameter>
+    </configfile>
     <configfile name="util/viewGenerator/settings/waves.properties">
       <parameter key="home.freezone.thin.appId">webPages4</parameter>
       <parameter key="home.freezone.thin.app.useLabel">false</parameter>
       <parameter key="applications.spaceId">WA2</parameter>
+    </configfile>
+    <configfile name="util/viewGenerator/settings/Aurora.properties">
+      <parameter key="Shortcut.home.1.Url">https://www.silverpeas.com/en/support-2/</parameter>
+      <parameter key="Shortcut.home.1.Target">_blank</parameter>
+      <parameter key="Shortcut.home.1.AltText">Need support? / Besoin de support ?</parameter>
+      <parameter key="Shortcut.home.1.IconUrl">/weblib/skins/waves/imgDesign/pictos/help.svg</parameter>
+      <parameter key="Shortcut.home.2.Url">https://www.youtube.com/@silverpeas595/videos</parameter>
+      <parameter key="Shortcut.home.2.Target">_blank</parameter>
+      <parameter key="Shortcut.home.2.AltText">Discover Silverpeas / Découvrir Silverpeas</parameter>
+      <parameter key="Shortcut.home.2.IconUrl">/weblib/skins/waves/imgDesign/pictos/youtube.svg</parameter>
+      <parameter key="Shortcut.home.3.Url">https://bit.ly/Silverpeas-Home-Page-Customization</parameter>
+      <parameter key="Shortcut.home.3.Target">_blank</parameter>
+      <parameter key="Shortcut.home.3.AltText">Home page customization  / Personnalisation de la page d'accueil </parameter>
+      <parameter key="Shortcut.home.3.IconUrl">/weblib/skins/waves/imgDesign/pictos/widget.svg</parameter>
+      <parameter key="Shortcut.home.4.Url">https://bit.ly/settings-skin-waves</parameter>
+      <parameter key="Shortcut.home.4.Target">_blank</parameter>
+      <parameter key="Shortcut.home.4.AltText">How to customize the home page / Configuration de la page d'accueil</parameter>
+      <parameter key="Shortcut.home.4.IconUrl">/weblib/skins/waves/imgDesign/pictos/configuration-file.svg</parameter>
+      <parameter key="Shortcut.home.5.Url">https://tracker.silverpeas.org/projects/silverpeas/roadmap</parameter>
+      <parameter key="Shortcut.home.5.Target">_blank</parameter>
+      <parameter key="Shortcut.home.5.AltText">Silverpeas Roadmap / Suivre les évolutions de Silverpeas</parameter>
+      <parameter key="Shortcut.home.5.IconUrl">/weblib/skins/waves/imgDesign/pictos/roadmap.svg</parameter>
+      <parameter key="Shortcut.home.6.Url">https://www.silverpeas.org/</parameter>
+      <parameter key="Shortcut.home.6.Target">_blank</parameter>
+      <parameter key="Shortcut.home.6.AltText">Open source community / Communauté Open Source</parameter>
+      <parameter key="Shortcut.home.6.IconUrl">/weblib/skins/waves/imgDesign/pictos/open-source.svg</parameter>
+    </configfile>
+    <configfile name="util/viewGenerator/settings/prima.properties">
+      <parameter key="Shortcut.home.1.Url">https://www.silverpeas.com/en/support-2/</parameter>
+      <parameter key="Shortcut.home.1.Target">_blank</parameter>
+      <parameter key="Shortcut.home.1.AltText">Need support? / Besoin de support ?</parameter>
+      <parameter key="Shortcut.home.1.IconUrl">/weblib/skins/waves/imgDesign/pictos/help.svg</parameter>
+      <parameter key="Shortcut.home.2.Url">https://www.youtube.com/@silverpeas595/videos</parameter>
+      <parameter key="Shortcut.home.2.Target">_blank</parameter>
+      <parameter key="Shortcut.home.2.AltText">Discover Silverpeas / Découvrir Silverpeas</parameter>
+      <parameter key="Shortcut.home.2.IconUrl">/weblib/skins/waves/imgDesign/pictos/youtube.svg</parameter>
+      <parameter key="Shortcut.home.3.Url">https://bit.ly/Silverpeas-Home-Page-Customization</parameter>
+      <parameter key="Shortcut.home.3.Target">_blank</parameter>
+      <parameter key="Shortcut.home.3.AltText">Home page customization  / Personnalisation de la page d'accueil </parameter>
+      <parameter key="Shortcut.home.3.IconUrl">/weblib/skins/waves/imgDesign/pictos/widget.svg</parameter>
+      <parameter key="Shortcut.home.4.Url">https://bit.ly/settings-skin-waves</parameter>
+      <parameter key="Shortcut.home.4.Target">_blank</parameter>
+      <parameter key="Shortcut.home.4.AltText">How to customize the home page / Configuration de la page d'accueil</parameter>
+      <parameter key="Shortcut.home.4.IconUrl">/weblib/skins/waves/imgDesign/pictos/configuration-file.svg</parameter>
+      <parameter key="Shortcut.home.5.Url">https://tracker.silverpeas.org/projects/silverpeas/roadmap</parameter>
+      <parameter key="Shortcut.home.5.Target">_blank</parameter>
+      <parameter key="Shortcut.home.5.AltText">Silverpeas Roadmap / Suivre les évolutions de Silverpeas</parameter>
+      <parameter key="Shortcut.home.5.IconUrl">/weblib/skins/waves/imgDesign/pictos/roadmap.svg</parameter>
+      <parameter key="Shortcut.home.6.Url">https://www.silverpeas.org/</parameter>
+      <parameter key="Shortcut.home.6.Target">_blank</parameter>
+      <parameter key="Shortcut.home.6.AltText">Open source community / Communauté Open Source</parameter>
+      <parameter key="Shortcut.home.6.IconUrl">/weblib/skins/waves/imgDesign/pictos/open-source.svg</parameter>
+    </configfile>
+    <configfile name="util/viewGenerator/settings/Sobre.properties">
+      <parameter key="Shortcut.home.1.Url">https://www.silverpeas.com/en/support-2/</parameter>
+      <parameter key="Shortcut.home.1.Target">_blank</parameter>
+      <parameter key="Shortcut.home.1.AltText">Need support? / Besoin de support ?</parameter>
+      <parameter key="Shortcut.home.1.IconUrl">/weblib/skins/waves/imgDesign/pictos/help.svg</parameter>
+      <parameter key="Shortcut.home.2.Url">https://www.youtube.com/@silverpeas595/videos</parameter>
+      <parameter key="Shortcut.home.2.Target">_blank</parameter>
+      <parameter key="Shortcut.home.2.AltText">Discover Silverpeas / Découvrir Silverpeas</parameter>
+      <parameter key="Shortcut.home.2.IconUrl">/weblib/skins/waves/imgDesign/pictos/youtube.svg</parameter>
+      <parameter key="Shortcut.home.3.Url">https://bit.ly/Silverpeas-Home-Page-Customization</parameter>
+      <parameter key="Shortcut.home.3.Target">_blank</parameter>
+      <parameter key="Shortcut.home.3.AltText">Home page customization  / Personnalisation de la page d'accueil </parameter>
+      <parameter key="Shortcut.home.3.IconUrl">/weblib/skins/waves/imgDesign/pictos/widget.svg</parameter>
+      <parameter key="Shortcut.home.4.Url">https://bit.ly/settings-skin-waves</parameter>
+      <parameter key="Shortcut.home.4.Target">_blank</parameter>
+      <parameter key="Shortcut.home.4.AltText">How to customize the home page / Configuration de la page d'accueil</parameter>
+      <parameter key="Shortcut.home.4.IconUrl">/weblib/skins/waves/imgDesign/pictos/configuration-file.svg</parameter>
+      <parameter key="Shortcut.home.5.Url">https://tracker.silverpeas.org/projects/silverpeas/roadmap</parameter>
+      <parameter key="Shortcut.home.5.Target">_blank</parameter>
+      <parameter key="Shortcut.home.5.AltText">Silverpeas Roadmap / Suivre les évolutions de Silverpeas</parameter>
+      <parameter key="Shortcut.home.5.IconUrl">/weblib/skins/waves/imgDesign/pictos/roadmap.svg</parameter>
+      <parameter key="Shortcut.home.6.Url">https://www.silverpeas.org/</parameter>
+      <parameter key="Shortcut.home.6.Target">_blank</parameter>
+      <parameter key="Shortcut.home.6.AltText">Open source community / Communauté Open Source</parameter>
+      <parameter key="Shortcut.home.6.IconUrl">/weblib/skins/waves/imgDesign/pictos/open-source.svg</parameter>
     </configfile>
     <configfile name="util/attachment/Attachment.properties">
       <parameter key="attachmentsAsContent.component.names">kmelia,quickinfo,almanach,userCalendar
