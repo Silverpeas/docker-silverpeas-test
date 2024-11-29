@@ -1,0 +1,35 @@
+<p>Silverpeas has already deployed SSO with their protocols :</p>
+
+<ul>
+	<li>
+	<p>Kerberos</p>
+	</li>
+	<li>
+	<p>SAML</p>
+	</li>
+	<li>Azur</li>
+</ul>
+
+<p class="publiDesc text2">&nbsp;</p>
+
+<div id="richContent">
+<div class="rich-content">
+<div class="bloc_para" id="bloc_1">
+<div class="inner ptl pbl">
+<div class="grid-1-small-1">
+<div class="para para_1 mbl">
+<div id="richContent">
+<div class="rich-content">
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, with its protocols or an other, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

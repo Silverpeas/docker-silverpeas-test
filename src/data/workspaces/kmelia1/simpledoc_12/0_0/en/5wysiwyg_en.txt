@@ -1,0 +1,37 @@
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+
+<p>&nbsp;</p>
+</div>
+</div>
+
+<p>This is a solution for &quot;feeding&quot; Silverpeas from a third-party application or an external device, such as a scanner.</p>
+
+<div id="richContent">
+<div class="rich-content">&nbsp;</div>
+</div>
+
+<h3 class="wysiwyg-title2">Functions of SilverDrive</h3>
+
+<ul>
+	<li><strong>Automatic push of a new documents</strong>: for any new file in a given folder on your computer, a corresponding publication is created in the right folder in Silverpeas</li>
+	<li><strong>OFFLINE mode</strong>: you can populate your local directories without being connected to the Silverpeas server and then import them later.</li>
+	<li><strong>Set the publishing mode wishe</strong> :
+	<ul>
+		<li>One publication per file;</li>
+		<li>One publication per forlder. This allows you to group several files in the same publication, based on the name of the folder.</li>
+		<li>A publication by files with the same nomenclature. After setting naming rules, the files are grouped according to these rules.</li>
+	</ul>
+	</li>
+	<li><strong>Tracing imported files.</strong><br />
+	An XML file allows you to trace the imports reached out in Silverpeas.</li>
+</ul>
+
+<p class="publiDesc text2">&nbsp;</p>
+
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>

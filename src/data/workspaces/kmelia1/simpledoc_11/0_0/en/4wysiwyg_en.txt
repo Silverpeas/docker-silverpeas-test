@@ -1,0 +1,111 @@
+<div class="bloc_para" id="bloc_1">
+<div class="inner ptl pbl">
+<div class="grid-1-small-1">
+<div class="para para_1 mbl">
+<div id="richContent">
+<div class="rich-content">
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<p class="txtcenter emphase">&nbsp;</p>
+
+<h2 class="whitespace-pre-wrap break-words"><a href="https://www.silverpeas.com/wp-content/uploads/2024/07/silverpeas-mobile.png"><img alt="" class="alignright wp-image-8060 size-full" decoding="async" sizes="(max-width: 400px) 100vw, 400px" src="https://www.silverpeas.com/wp-content/uploads/2024/07/silverpeas-mobile.png" srcset="https://www.silverpeas.com/wp-content/uploads/2024/07/silverpeas-mobile.png 400w, https://www.silverpeas.com/wp-content/uploads/2024/07/silverpeas-mobile-100x150.png 100w" style="width: 190px; height: 285px; float: right;" /></a>Key figures for Silverpeas Mobile</h2>
+
+<p>🚀 +15 integrated business applications (ECM, News, Blog, Media Library, Calendar, etc.)<br />
+💯 100% of your company data accessible<br />
+📱 Installation on iOS and Android in less than 2 minutes<br />
+🔐 Secure one-click authentication (with SSO)<br />
+⚡ Information search 5x faster than desktop version<br />
+📸 Share photos and videos in less than 30 seconds<br />
+🔔 Instant notifications for 0 missed information<br />
+💼 +30% productivity for mobile teams</p>
+
+<div class="bloc_arg" id="bloc_2">
+<div class="inner ptl pbl">
+<h3 class="wysiwyg-title2">Main Features</h3>
+
+<div class="bloc_para  grid-3-small-1">
+<div class="para txtcenter para_1 mbl wow fadeInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+<ul>
+	<li><strong>🔍 Total access to information</strong><br />
+	View all your documents and company data.<br />
+	Quickly find what you&rsquo;re looking for with our powerful search engine</li>
+</ul>
+</div>
+
+<div class="para txtcenter para_2 mbl wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+<ul>
+	<li><strong>✍️ Easy publishing and data entry</strong><br />
+	Publish content, comments, or photos in a few clicks<br />
+	Fill out forms and participate in workflows from your mobile</li>
+</ul>
+</div>
+
+<div class="para txtcenter para_3 mbl wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+<ul>
+	<li><strong>🔔 Real-time notifications</strong><br />
+	Never miss anything thanks to customizable push alerts<br />
+	Stay informed of important updates, even when the app is closed</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bloc_arg" id="bloc_3">
+<div class="inner ptl pbl">
+<h3 class="wysiwyg-title2">Other key features</h3>
+
+<div class="bloc_para  grid-4-small-1">
+<div class="para txtcenter para_1 mbl wow fadeInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+<ul>
+	<li>👥 <strong>Collaboration</strong><br />
+	Integrated instant messaging and video conferencing<br />
+	Participation in company blogs, surveys, and votes</li>
+</ul>
+</div>
+
+<div class="para txtcenter para_2 mbl wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+<ul>
+	<li>📅 <strong>Productivity</strong><br />
+	Offline mode to work without a connection<br />
+	Manage your tasks and personal favorites</li>
+</ul>
+</div>
+
+<div class="para txtcenter para_3 mbl wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+<ul>
+	<li>🔒 <strong>Security</strong><br />
+	Secure authentication with SSO option<br />
+	Two-factor authentication<br />
+	&nbsp;</li>
+	<li>🚹 <strong>Accessibility</strong><br />
+	Text-to-speech for publication content<br />
+	Font size adjustment<br />
+	Filters (black and white, inverse, sepia)</li>
+</ul>
+
+<p class="publiDesc text2">&nbsp;</p>
+
+<div id="richContent">
+<div class="rich-content">
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

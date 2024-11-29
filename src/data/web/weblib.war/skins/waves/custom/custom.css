@@ -1,0 +1,8 @@
+div#weather-home #ephemeride::before {
+    content:"Today's celebration is ";
+}
+
+div.rich-content a {
+    color:#263fc7;
+    text-decoration:underline;
+}

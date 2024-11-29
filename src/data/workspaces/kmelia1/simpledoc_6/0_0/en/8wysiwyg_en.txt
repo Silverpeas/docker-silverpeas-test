@@ -1,0 +1,27 @@
+<h3 class="wysiwyg-title2">Presentation</h3>
+
+<p>The Classification Plan is a multi-dimensional classification system composed of several axes.<br />
+Each axis carries a strong notion of the company (Professions, Products, Themes, Geographic, Document typology, etc.) which will be broken down using a tree of values. These axes and their sub axis are created freely from the platform&#39;s back office by the administrator or by delegation.</p>
+
+<p>Depending on the nature and importance of the information, contributors will be able to classify it on the appropriate axes and values ​​of the Classification Plan.<br />
+A position is made up of a set of axes/values. The same contribution can have several positions on the Classification Plan.</p>
+
+<p><a href="javascript:void(0)" onclick="spWindow.loadAdminHomePage();" title="Back office">You can define your taxonomy&nbsp; from the back office</a></p>
+
+<h3 class="wysiwyg-title2">Interest</h3>
+
+<p>This classification plan offers a much more efficient system than a simple tag mechanism. If it&#39;s well work, it&#39;s really powerfull.</p>
+
+<p>You have to create a clear and full classification. Coherent with your business and understable by your users.</p>
+
+<p>You should define using classification into the most critical et centric&#39;s EDM. And I sugest to make this <strong>classification forced.</strong></p>
+
+<p class="wysiwyg-important">If all documents are classified, then the classification will be really impactful.</p>
+
+<h3 class="wysiwyg-title2">SET UP</h3>
+
+<ol>
+	<li>Create your classification plan : Axis and sub axis ...etc</li>
+	<li>Create or modify the application setting to enable taxonomy in the wished applications.</li>
+	<li>Communicate to your users to encourage them and explain the impact and necessity of the classification usage</li>
+</ol>

@@ -1,0 +1,14 @@
+<p>In our documents management (EDM) you can group files together and write common content. It&#39;s not an usual concept in other EDM.<br />
+So let&#39;s show the power of the concept to you!</p>
+
+<p>Here illustrated by the publication &ldquo;Media Pack&rdquo;: <a href="/silverpeas/Publication/17">/silverpeas/Publication/17</a></p>
+
+<p>Our notion of publication is not known in standard IT/Office language.</p>
+
+<p>Publication allows to:</p>
+
+<ul>
+	<li>group a set of files (which is usually done by a folder)</li>
+	<li>link some text content to it. Allow you to give the scope, context, expectations, constraints... and this is directly visible when opening the publication. (which is often done by a readme file that few people take time to read)</li>
+	<li>Open discussions around this same context. (If the comment parameter is enabled)</li>
+</ul>

@@ -1,0 +1,65 @@
+<div id="richContent">
+<div class="rich-content">
+<div class="bloc_para" id="bloc_1">
+<div class="inner ptl pbl">
+<div class="grid-1-small-1">
+<div class="para para_1 mbl">
+<div id="richContent">
+<div class="rich-content">
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p><br />
+We use the LibreOffice Online solution.<br />
+To make this possible you must :</p>
+
+<ul>
+	<li>have an instance of LibreOffice Online available (On-Premise or Cloud),</li>
+	<li>have correctly configured Silverpeas in relation to this instance of LibreOffice Online.</li>
+</ul>
+
+<p>When these two points are operational, the new Edit in Browser action appears in the context menu of each office file. This action opens the file in a new tab in edit mode, it&#39;is automatically marked as Reserved.</p>
+
+<p>There are several LibreOffice Online providers. Our choice fell on Collabora CODE in its free version. This is a development version which is updated very regularly.</p>
+
+<h3 class="wysiwyg-title2">SIMULTANEOUS EDITING BY SEVERAL USERS 👨🏻&zwj;🤝&zwj;👨🏻</h3>
+
+<p>Editing from the browser also allows simultaneous modification of a document by several users.<br />
+The new action &ldquo;Activate simultaneous editing&rdquo; allows you to open simultaneous editing or not. By default, simultaneous editing is allowed. And in this case, all users who have the right to modify the document can do so simultaneously. From the interface, the list of users present on the document is available. A color is associated with each user so that they can easily follow each other&#39;s changes.</p>
+
+<p>The Revision tab allows you to finely manage the modifications proposed by everyone. Each modification can be accepted or refused. It is also possible to accept (or refuse) all the modifications in a single operation. Areas added, modified, or deleted are highlighted with the user&#39;s color. Additionally, comments can be associated with elements of the document.</p>
+
+<p class="publiDesc text2">&nbsp;</p>
+
+<div id="richContent">
+<div class="rich-content">
+<div class="bloc_para" id="bloc_1">
+<div class="inner ptl pbl">
+<div class="grid-1-small-1">
+<div class="para para_1 mbl">
+<div id="richContent">
+<div class="rich-content">
+<div id="richContent">
+<div class="rich-content">
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

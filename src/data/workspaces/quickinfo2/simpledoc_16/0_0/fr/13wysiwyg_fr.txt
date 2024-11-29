@@ -1,0 +1,61 @@
+<section>
+<p>We believe in the&nbsp;efficiency work powered by the collaboration, the knowledge-sharing and the opportunity of rapid feedback, and we want to extend and improve this way of thinking and of working.</p>
+
+<p>Silverpeas is an Open-Source Collaborative and Social Web Portal mainly used by our users to build an Intranet or an Extranet. Our 20 years of collaboration with clients maked born about 30 ready to use applications. Its almost all avaible by the backoffice by the action &quot;Add an application&quot;. But somes are only avaible with Silverpeas action, see in this folder &quot;Optional Modules&quot; : <a href="/silverpeas/Topic/3?ComponentId=kmelia1">/silverpeas/Topic/3?ComponentId=kmelia1</a></p>
+</section>
+
+<section>
+<h3 class="wysiwyg-title2" id="architecture">Architecture</h3>
+
+<p>Silverpeas is built on the Java JEE environment leveraging both its architecture and its cutting-edge technology. It is made up of a collaborative bus through which a large variety of both technical and business services are provided, atop of which are built about 30 freely available applications. It provides also a framework to develop new applications and a set of components to build a coherent and integrated look&amp;feel.</p>
+
+<p>Some services provided by the collaborative bus: authentication, rights management, search engine, workflow engine, notification, event subscription, content publishing, commenting, rating</p>
+
+<section>
+<h3 class="wysiwyg-title2" id="overview">Overview &amp; Issue Management</h3>
+</section>
+
+<section>
+<p>Issues, bugs, and feature requests should be submitted to the following issue management system, called redmine.</p>
+
+<div class="source">
+<pre class="prettyprint">
+<a class="externalLink" href="https://tracker.silverpeas.org"><span class="pln">https</span><span class="pun">:</span><span class="com">//tracker.silverpeas.org</span></a></pre>
+
+<h3 class="wysiwyg-title2"><span class="com">Developpement &amp; contribution</span></h3>
+</div>
+</section>
+
+<p>For developing a new functionality or just adding a new translation, or suggest a new icons set. You should used Git.</p>
+
+<p><a class="externalLink" href="http://git-scm.com/">Git</a> is a Distributed Version Control System (DVCS). The main difference with VCS is its distributed form, which means that there is not a single repository centralizing all the code history.<br />
+All the code history is in each repository, which means that you have all the history in your local repository as well as in the others.<br />
+You can find all the instruction in our community website :&nbsp; <a href="https://www.silverpeas.org/dev/collaboration.html" target="_blank">https://www.silverpeas.org/dev/collaboration.html</a></p>
+
+<h3 class="wysiwyg-title2">Support</h3>
+
+<section>
+<p id="mailing-lists"><strong>Mailing-lists</strong></p>
+
+<p>If you have some questions, you can join us at the mailing-lists below. They are hosted by Google Groups, so you will have to create an account (but it doesn&#39;t require a gmail account).</p>
+
+<ul>
+	<li>
+	<p><a class="externalLink" href="http://groups.google.com/group/silverpeas-users">The Silverpeas user list</a> for questions about the installation and the use of Silverpeas,</p>
+	</li>
+	<li>
+	<p><a class="externalLink" href="http://groups.google.com/group/silverpeas-dev">The Silverpeas development list</a> for questions or information on the development of Silverpeas. This mailing-list is more dedicated to both contributors and integrators.</p>
+	</li>
+</ul>
+</section>
+
+<section>
+<p id="issue-tracking"><strong>Issue tracking</strong></p>
+
+<p>We provide a web tool to track issues from our all users, customers and contributors. You can help us to improve the Silverpeas Collaborative Platform by submitting bug reports or by asking for new features.</p>
+
+<p>The feature asks are only treated within a business approach.</p>
+
+<p>Our issue tracking system is available at <a class="externalLink" href="https://tracker.silverpeas.org">Silverpeas Redmine</a>. To avoid spamming, accounts have read-only access per default. Please, send an email to support at silverpeas.com so that we know your real person ;) and you &#39;ll get writting rights.</p>
+</section>
+</section>

@@ -1,8 +1,7 @@
-FROM ubuntu:focal
-
-MAINTAINER Miguel Moquillon "miguel.moquillon@silverpeas.org"
+FROM ubuntu:jammy
 
 ENV TERM=xterm
+ENV DEBIAN_FRONTEND=noninteractive
 
 #
 # Install required and recommended programs for Silverpeas
@@ -11,7 +10,7 @@ ENV TERM=xterm
 # Installation of LibreOffice, ImageMagick, Ghostscript, and then
 # the dependencies required to run SWFTools and PDF2JSON
 RUN apt-get update \
-  && apt-get install -y tzdata \ 
+  && apt-get install -y tzdata \
   && apt-get install -y \
     apt-utils \
     iputils-ping \
@@ -32,6 +31,8 @@ RUN apt-get update \
     libreoffice \
     ure \
     gpgv \
+    postgresql \
+    sudo \
   && rm -rf /var/lib/apt/lists/* \
   && update-ca-certificates -f
 
@@ -74,9 +75,21 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.4
+ARG SILVERPEAS_VERSION=6.4.2-SNAPSHOT
 ARG WILDFLY_VERSION=26.1.3
-LABEL name="Silverpeas Test" description="An all-to-one image to run Silverpeas for demo/testing purpose" vendor="Silverpeas" version=${SILVERPEAS_VERSION} build=1
+
+LABEL org.opencontainers.image.vendor="Silverpeas" \
+      org.opencontainers.image.authors="Miguel Moquillon <miguel.moquillon@silverpeas.org>" \
+      org.opencontainers.image.licenses="AGPLv3" \
+      org.opencontainers.image.title="Silverpeas for testing/trial purpose" \
+      org.opencontainers.image.description="An all-to-one image to run Silverpeas for demo/testing purpose" \
+      org.opencontainers.image.version="${SILVERPEAS_VERSION}"
+
+LABEL name="Silverpeas for testing/trial purpose" \
+      description="An all-to-one image to run Silverpeas for demo/testing purpose" \
+      vendor="Silverpeas" \
+      version="${SILVERPEAS_VERSION}" \
+      build=1
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?}.zip \
@@ -90,19 +103,13 @@ RUN wget -nc https://www.silverpeas.org/files/silverpeas-${SILVERPEAS_VERSION}-w
   && unzip wildfly-${WILDFLY_VERSION}.Final.zip -d /opt \
   && mv /opt/silverpeas-${SILVERPEAS_VERSION}-wildfly${WILDFLY_VERSION%.?.?} /opt/silverpeas \
   && mv /opt/wildfly-${WILDFLY_VERSION}.Final /opt/wildfly \
-  && wget -nc https://www.silverpeas.org/files/oak-migrate.zip \
-  && echo '02d21f69004f2d9e634e82ec062d94521bd6bc0385d7c0ddf9af261cb63afdbb oak-migrate.zip' | sha256sum -c --status - \
-  && mkdir -p /opt/oak-migration \
-  && unzip oak-migrate.zip -d /opt/oak-migration/ \
-  && chmod +x /opt/oak-migration/oak-migrate.sh \
-  && rm *.zip \
-  && mkdir -p /root/.m2
+  && rm ./*.zip \
+  && mkdir -p /root/.m2/repository
 
 # Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from
 # the Silverpeas Nexus Repository
-COPY src/repository /root/.m2/repository
 COPY src/settings.xml /root/.m2/
-COPY src/h2 /opt/silverpeas/h2
+COPY src/silverpeas.sql /opt/silverpeas/
 COPY src/configuration /opt/silverpeas/configuration
 COPY src/data /opt/silverpeas/data
 COPY src/bin /opt/silverpeas/bin
@@ -128,7 +135,7 @@ EXPOSE 8000 9990
 
 # The following Silverpeas folders are exposed by default so that you can access outside the container the logs,
 # the data, and the workflow definitions that are produced in Silverpeas.
-VOLUME ["/opt/silverpeas/log", "/opt/silverpeas/data", "/opt/silverpeas/h2"]
+VOLUME ["/opt/silverpeas/log", "/opt/silverpeas/data"]
 
 # What to execute by default when running the container
 CMD ["/opt/run.sh"]

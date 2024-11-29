@@ -1,0 +1,21 @@
+<h3 class="wysiwyg-title2">Personnalized</h3>
+
+<p>Define the real name of your Domain, update the email of the Administrator User ...</p>
+
+<p><a href="javascript:void(0)" onclick="spWindow.loadAdminHomePage();" title="Back office">Let&#39;s do this to the back office</a></p>
+
+<p>On the tab <span class="textePetitBold">Workspaces &amp; users &gt; Choose Users &amp; Group. Select the DomainSilverpeas.</span></p>
+
+<p><span class="textePetitBold">Edit the domain, give it the </span>appropriate <span class="textePetitBold">name. Edit the default user SilverAdmin, or create a new one with your name , email,&nbsp; ..., Becarful giving it the <strong>Administrator type </strong>and a serious password.</span></p>
+
+<h3 class="wysiwyg-title2">Go beyond</h3>
+
+<p>If you want to test the plateform with a panel of user (Reader, manager ...)</p>
+
+<p>Start by creating the different groups. Think about the futur users rights, and theim access to the diff&eacute;rent space.</p>
+
+<p>Then create the users of the plateforme.</p>
+
+<p class="wysiwyg-important">You must know, that you can create an<strong> open plateform where user can register by himself </strong>( with a validation system or not ). Contact us for&nbsp; more informations : <span style="font-size:20px;"><a href="mailto:contact@silverpeas.org" target="_blank">contact@silverpeas.org</a></span></p>
+
+<p>&nbsp;</p>

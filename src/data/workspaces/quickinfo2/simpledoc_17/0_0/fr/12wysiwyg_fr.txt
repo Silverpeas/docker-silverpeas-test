@@ -1,0 +1,7 @@
+<p>Clic, visit, don&#39;t be afraid about it.</p>
+
+<p>Administrators, go to the back office (the shield button with a crown, on the top). Check the publications here,&nbsp;&nbsp; <a href="/silverpeas/Topic/4?ComponentId=kmelia1">/silverpeas/Topic/4?ComponentId=kmelia1,&nbsp;</a> to learn more about the first steps of the administration.</p>
+
+<p>Managers and administrators, roll hover the &quot;What do you want to do next&quot; and you&#39;ll see all you can do in each page context.</p>
+
+<p><iframe frameborder="0" height="360" id="ytplayer" src="https://www.youtube.com/embed/aO-1jBDIrZI?autoplay=0" type="text/html" width="640"></iframe></p>

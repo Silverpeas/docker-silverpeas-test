@@ -9,6 +9,12 @@ set -e
 configure_silverpeas() {
   echo "Configure Silverpeas..."
   local configure=0
+  if [ "Z${locale}" = "Z" ]; then
+    regexp="([a-z][a-z])_.+"
+    if [[ $LANG =~ $regexp ]]; then
+      locale="${BASH_REMATCH[1]}"
+    fi
+  fi
   if [ "Z${locale}" != "Z" ]; then
     echo " -> set locale to ${locale}"
     echo "SILVERPEAS_USER_LANGUAGE=${locale}" >> "${SILVERPEAS_HOME}"/configuration/config.properties
@@ -32,7 +38,7 @@ configure_silverpeas() {
 }
 
 start_silverpeas() {
-  "${SILVERPEAS_HOME}"/bin/h2database start
+  /etc/init.d/postgresql start
 
   echo "Start Silverpeas..."
   "${JBOSS_HOME}"/bin/standalone.sh -b 0.0.0.0 -c standalone-full.xml &
@@ -48,7 +54,7 @@ stop_silverpeas() {
     kill $pids &> /dev/null
   fi
   
-  "${SILVERPEAS_HOME}"/bin/h2database stop
+  /etc/init.d/postgresql stop
 }
 
 trap 'stop_silverpeas' SIGTERM

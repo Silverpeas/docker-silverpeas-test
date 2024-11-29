@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 
-    Copyright (C) 2000 - 2022 Silverpeas
+    Copyright (C) 2000 - 2024 Silverpeas
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -21,7 +21,7 @@
     GNU Affero General Public License for more details.
 
     You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -->
 
@@ -29,6 +29,7 @@
   <name>Fiche expert</name>
   <description>Utilisé par l'application Annuaire d'experts</description>
   <visible>false</visible>
+  <locked>true</locked>
 	<dataFileName>whitePages/data.xml</dataFileName>
 	<viewFileName>whitePages/view.xml</viewFileName>
 	<updateFileName>whitePages/update.xml</updateFileName>

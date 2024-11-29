@@ -1,0 +1,23 @@
+<h3 class="wysiwyg-title2">Deploy an app :</h3>
+
+<ol>
+	<li>Go to the space where you want to deploy it</li>
+	<li>Find in the menu &quot;What do you want to do next&quot; the entrance : <strong>Setup this space</strong></li>
+	<li>Now you are in the backOffice way</li>
+	<li>Choose the action :&nbsp;<strong> <span>Add an application</span></strong></li>
+	<li><span>Choose the right app</span></li>
+</ol>
+
+<h3 class="wysiwyg-title2"><span>Settings an app :</span></h3>
+
+<p><span>This is the important part. I suggest you to take time for this. I&#39;ll take an extreme example :&nbsp; the EDM</span></p>
+
+<p><span>This app is the one that have a most complexity settings. The bad way is to thinking &quot;</span>Who can do more can do less&quot;.</p>
+
+<p>You really have to think what you want to offer to users. They don&#39;t need to be lost in so much possibilty. You have to guide they.</p>
+
+<p>Think more : less is more. Open the most limitly spectre you can.</p>
+
+<p>For this EDM, I only use 6 parameters of the 45 possibles. An explication is avaible for each parameter, accessible by the i blue present in front of the parameter name.</p>
+
+<p>&nbsp;</p>

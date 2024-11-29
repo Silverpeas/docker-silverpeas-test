@@ -1,0 +1,5 @@
+<p class="wysiwyg-important">At any time, your first instinct when you need to do something, is to go hover the &quot;What du you want to do next&quot; menu.</p>
+
+<p>Most of tasks are avaible by the front office. Only important changes like : creation of a new space, deployed a new application, editing the access rights or all adminsitration task link to users, group and domains, need access to the backoffice.</p>
+
+<p>Try switch on front and back office, let&#39;s try by creating space, app, create content, create a form (from the backoffice) use this form in to your EDM...</p>

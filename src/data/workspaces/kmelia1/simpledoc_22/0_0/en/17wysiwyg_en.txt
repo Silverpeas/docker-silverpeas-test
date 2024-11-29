@@ -1,0 +1,10 @@
+<p>Here you will find the elements provided for press.</p>
+
+<p>It&#39;s just few elements, and really necessary facts about us and our product.</p>
+
+<p class="wysiwyg-important">Note that press often prefer a short speech, a photo and that&rsquo;s it. They&#39;ll ask if they want more, and then you can send the press kit.<br />
+Don&#39;t send all the press speech if it&#39;s not asking by the journalist himself</p>
+
+<p>Please validate the communication of these elements with us at the first place ;)</p>
+
+<p>-&gt; contact@silverpeas.com</p>

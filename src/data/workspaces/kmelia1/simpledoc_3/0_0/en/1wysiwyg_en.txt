@@ -1,0 +1,45 @@
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+
+<h3 class="wysiwyg-title2">ConverseJS</h3>
+
+<p><a href="https://conversejs.org/" target="_blank">https://conversejs.org/</a></p>
+
+<p>ConverseJS is a free and open source XMPP chat client.&nbsp; It uses the synchronous communication protocol XMPP (Extensible Messaging and Presence Protocol) which has been standardized and under constant development within the IETF (Internet Engineering Task Force) since 2002. Systems&hellip;)</p>
+
+<p><strong>The functions of this instant messaging are:</strong></p>
+
+<ul>
+	<li>&nbsp;&nbsp;&nbsp; textual peer-to-peer communication,</li>
+	<li>&nbsp;&nbsp;&nbsp; text communication with several people (discussion group),</li>
+	<li>&nbsp;&nbsp;&nbsp; presence status (Online, Busy, Absent, Absent for a long time),</li>
+	<li>&nbsp;&nbsp;&nbsp; personal status,</li>
+	<li>&nbsp;&nbsp;&nbsp; correction and deletion of sent messages,</li>
+	<li>&nbsp;&nbsp;&nbsp; interaction with a message: Like 👍🏻, Dislike and Reply.</li>
+	<li>&nbsp;&nbsp;&nbsp; history of exchanges,</li>
+	<li>&nbsp;&nbsp;&nbsp; sending files,</li>
+	<li>&nbsp;&nbsp;&nbsp; video screen capture and direct sending,</li>
+	<li>&nbsp;&nbsp;&nbsp; categorized emoticons,</li>
+	<li>&nbsp;&nbsp;&nbsp; strike indicator.</li>
+</ul>
+
+<h3 class="wysiwyg-title2">Jitsy</h3>
+
+<p><a href="https://jitsi.org/" target="_blank">https://jitsi.org/</a></p>
+
+<p>Go ahead, video chat with the whole team. In fact, invite everyone you know. Jitsi Meet is a fully encrypted, 100% open source video conferencing solution.</p>
+
+<p><strong>What else can you do with Jitsi Meet?</strong></p>
+
+<ul>
+	<li>Share your desktop, presentations, and more</li>
+	<li>Invite users to a conference via a simple, custom URL</li>
+	<li>Edit documents together using Etherpad</li>
+	<li>Pick fun meeting URLs for every meeting</li>
+	<li>Trade messages and emojis while you video conference, with integrated chat.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>If you are interested by this module, contact us : <a href="https://www.silverpeas.com/en/contact-us/" target="_blank">https://www.silverpeas.com/en/contact-us/</a></p>
+
+<p>&nbsp;</p>

@@ -1,0 +1,7 @@
+<p>For the tree structure creation you have to <strong>pass by the backoffice.</strong></p>
+
+<p>Create your first level of space, pay attention to the right (manager, reader...) you give. You should have defined user&#39;s group before.</p>
+
+<p>When you create the rest of the tree structure, and deploy the applications, by default they herited of the right of the parent space.</p>
+
+<p><strong>Nothing is irreversible</strong>, at any time you can change this structure. You just have to put the space you want to move in &quot;Maintenance&quot;, and then you can cut and past it.</p>

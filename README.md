@@ -46,25 +46,30 @@ say English, by passing it to the container through the `locale` environment var
 To customize more configuration parameters in Silverpeas, please refer section 
 **Custom configuration** below.
 
+Once Silverpeas running, you can access it through the following URL 
+[http://localhost:8000/silverpeas](http://localhost:8000/silverpeas) with your preferred web 
+browser. To sign in, please use the following login identifier `SilverAdmin` with the following 
+password `SilverAdmin`. You will find then a Silverpeas collaborative platform with an initial 
+content set.
+
 ### Keep data out of the container
 
 By default, the data are stored into the container and then they can be lost once the container is
 removed. 
 To share the data with others containers or to keep them out of a container, you
-can mount the volumes `/opt/silverpeas/data` and `/opt/silverpeas/h2` on the host.
+can mount the volumes `/opt/silverpeas/data` and `/var/lib/postgresql/data` on the host.
 You can also mount the volume `/opt/silverpeas/log` in order to glance at the logs.
 For example:
 
 	$ docker run --name silverpeas-test -p 8080:8000 -d \
 	  -v silverpeas-log:/opt/silverpeas/log \
 	  -v silverpeas-data:/opt/silverpeas/data \
-	  -v silverpeas-h2:/opt/silverpeas/h2 \
+	  -v silverpeas-postgresql:/var/lib/postgresql/data \
 	  silverpeas/silverpeas-test
 
-The logs, the Silverpeas data and the H2 database's data are here all mounted on the host under the 
-respective labels `silverpeas-log`, `silverpeas-data` and `silverpeas-h2`. 
-Refers the 
-[Docker Documentation](https://docs.docker.com/engine/tutorials/dockervolumes/#locating-a-volume) 
+The logs, the Silverpeas data and the PostgreSQL database's data are here all mounted on the host 
+under the respective labels `silverpeas-log`, `silverpeas-data` and `silverpeas-postgresql`. 
+Refers the [Docker Documentation](https://docs.docker.com/engine/tutorials/dockervolumes/#locating-a-volume) 
 to locate the labels of mounted volumes in a Docker installation. Be careful, because the volumes 
 have a content that was produced at the image creation, they cannot be mounted in the host's
 filesystem without losing the volumes' content (the mount point overlays the pre-existing content of
@@ -77,7 +82,7 @@ configuration file `config.properties`, set them into a `custom_config.propertie
 file on the host and then map it to a `/opt/silverpeas/configuration/custom_config.properties` file 
 in the container.
 For example, to set the SMTP properties to receive email notifications, you add them into a 
-`custom_config.properties` file (for our example, in your home `/home/me`):
+`custom_config.properties` file (for our example, in your home directory `/home/me`):
 
 	SMTP_SERVER=smtp.googlemail.com
 	SMTP_AUTHENTICATION=true
@@ -98,15 +103,19 @@ configuration file.
 
 ### Custom Silverpeas settings
 
-The Silverpeas core engines as well as the Silverpeas applications can be customized by their 
-settings in the `/opt/silverpeas/properties` directory. For historical reason, the customization of
-such settings are performed by an XML script `CustomerSettings.xml` that follows the syntax of the
-main `00-SilverpeasSettings.xml` script in `/opt/silverpeas/configuration/silverpeas` directory. If
-you wish to customize some of the Silverpeas settings, you can do it through either a 
-`CustomSettings.xml` file or a `CustomerSettings.xml` file and then map it to the same file in the
+The Silverpeas core engines as well as the Silverpeas applications can be customized by modifying 
+their settings in their properties files located in the `/opt/silverpeas/properties` directory. For 
+historical reason, the customization of such settings are performed by XML scripts  
+that follows the syntax of the main `00-SilverpeasSettings.xml` script in the 
+`/opt/silverpeas/configuration/silverpeas` directory.
+
+By default, this image is provided with a customization of some settings through the XML file 
+`CustomerSettings.xml`, in order to provide a ready-to-test Silverpeas platform. If you which to add
+additional customization of the Silverpeas settings, you can do it by adding then into your own 
+XML file and then map it to the same file in the
 `/opt/silverpeas/configuration/silverpeas/` directory in the container.
-For example, to set weaker rules for passwords, you can set them into such an XML file (located for
-example in your home `/home/me`):
+For example, to set weaker rules for passwords, you can set them into the 
+`MyOwnCustomSettings.xml`XML file (located for example in your home directory `/home/me`):
   
     <?xml version="1.0" encoding="UTF-8"?>
     <silverpeas-settings product="custom">
@@ -126,7 +135,7 @@ example in your home `/home/me`):
 then you map it to the container:
 
 	$ docker run --name silverpeas-test -p 8080:8000 -d \
-	  -v /home/me/CustomSettings.xml:/opt/silverpeas/configuration/silverpeas/CustomSettings.xml \
+	  -v /home/me/MyOwnCustomSettings.xml:/opt/silverpeas/configuration/silverpeas/MyOwnCustomSettings.xml \
 	  silverpeas/silverpeas-test
 
 ## Logs

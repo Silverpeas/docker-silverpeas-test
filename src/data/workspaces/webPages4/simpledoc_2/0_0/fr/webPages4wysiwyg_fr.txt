@@ -1,0 +1,12 @@
+<p style="text-align: center;"><span style="font-size:20px;">The installation of the docker is a success.<br />
+<span style="color:#ffffff;"><span style="background-color:#f1c40f;">👍🏻 Congratulations 👍🏻</span></span></span></p>
+
+<p><span style="font-size:20px;">Now you can experience this platform by yourself.</span></p>
+
+<p><span style="font-size:20px;">We have included some content to help you.</span></p>
+
+<p><span style="font-size:20px;">You also have some interesting shortcuts right here </span><span style="font-size:18px;">↗.</span></p>
+
+<p><span style="font-size:20px;">We&#39;re still interested by knew who is using our product. So please let&#39;s us know : <a href="mailto:contact@silverpeas.org" target="_blank">contact@silverpeas.org</a></span></p>
+
+<p><span style="font-size:20px;">&nbsp;</span></p>

@@ -1,69 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <silverpeas-settings product="Custom">
 
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas">
-
-    <configfile name="calendar/settings/calendar.properties">
-      <parameter key="calendar.import.ics.file.replace.before.process">
-        <![CDATA[CREATED:0000/CREATED:1970]]></parameter>
-    </configfile>
-
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
     <configfile name="general.properties">
-      <parameter key="web.request.domain.allowed">*</parameter>
+      <parameter key="web.resource.js.get.minified.enabled">false</parameter>
+      <parameter key="web.resource.css.get.minified.enabled">false</parameter>
     </configfile>
-
-    <configfile name="util/uploads/uploadSettings.properties">
-      <parameter key="MaximumFileSize">1610612736</parameter>
+    <configfile name="documentTemplate/settings/documentTemplate.properties">
+      <parameter key="documentTemplate.enabled">true</parameter>
     </configfile>
-
-    <configfile name="authentication/settings/authenticationSettings.properties">
-      <parameter key="newRegistrationEnabled">true</parameter>
-      <parameter key="changePwdFromLoginPageActive">true</parameter>
+    <configfile name="util/i18n.properties">
+      <parameter key="languages">fr,en,de</parameter>
     </configfile>
-
-    <configfile name="password/settings/password.properties">
-      <parameter key="password.rule.minLength">4</parameter>
-      <parameter key="password.rule.blankForbidden">false</parameter>
-      <!--
-      <parameter key="password.rule.sequentialForbidden">false</parameter>
-      <parameter key="password.rule.atLeastXUppercase">false</parameter>
-      <parameter key="password.rule.atLeastXUppercase.X">3</parameter>
-      <parameter key="password.rule.atLeastXUppercase.combined">false</parameter>
-      <parameter key="password.rule.atLeastXLowercase">false</parameter>
-      <parameter key="password.rule.atLeastXLowercase.X">2</parameter>
-      <parameter key="password.rule.atLeastXLowercase.combined">false</parameter>
-      <parameter key="password.rule.atLeastXDigit">false</parameter>
-      <parameter key="password.rule.atLeastXDigit.X">1</parameter>
-      <parameter key="password.rule.atLeastXDigit.combined">false</parameter>
-      <parameter key="password.rule.atLeastXSpecialChar">false</parameter>
-      <parameter key="password.rule.atLeastXSpecialChar.X">2</parameter>
-      <parameter key="password.rule.atLeastXSpecialChar.combined">false</parameter>
-      <parameter key="password.combination.nbMatchingRules">3</parameter>
-      -->
+    <configfile name="util/viewGenerator/settings/waves.properties">
+      <parameter key="home.freezone.thin.appId">webPages4</parameter>
+      <parameter key="home.freezone.thin.app.useLabel">false</parameter>
+      <parameter key="applications.spaceId">WA2</parameter>
     </configfile>
-
-    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
-      <parameter key="quota.domain.users.activated">false</parameter>
-    </configfile>
-
-    <configfile name="jobStartPagePeas/settings/jobStartPagePeasSettings.properties">
-      <parameter key="quota.space.components.activated">false</parameter>
-    </configfile>
-
-    <configfile name="kmelia/settings/kmeliaSettings.properties">
-      <parameter key="kmelia.export.formats.active">zip pdf odt doc</parameter>
-    </configfile>
-
     <configfile name="util/attachment/Attachment.properties">
-      <parameter key="attachment.data.fromMetadata">true</parameter>
+      <parameter key="attachmentsAsContent.component.names">kmelia,quickinfo,almanach,userCalendar
+      </parameter>
+      <parameter key="attachmentsAsContent.default.value">true</parameter>
     </configfile>
-
-    <!-- H2 doesn't support the COUNT() OVER() windowing function -->
-    <configfile name="general.properties">
-      <parameter key="jdbc.pagination.method.countOver">false</parameter>
+    <configfile name="notificationserver/channel/smtp/smtpSettings.properties">
+      <parameter key="NotificationPersonalName">Silverpeas Test</parameter>
+      <parameter key="NotificationAddress">noreply@silverpeas.com</parameter>
+      <parameter key="AuthorizedDomains">silverpeas.com</parameter>
+      <parameter key="ForceReplyToSenderField">true</parameter>
     </configfile>
+    <configfile name="util/security.properties">
+      <parameter key="security.web.protection">true</parameter>
+    </configfile>
+    <configfile name="util/uploads/uploadSettings.properties">
+      <parameter key="MaximumFileSize">4294967296</parameter>
+    </configfile>
+    <configfile name="multipart/multipart.properties">
+      <!-- Maxi size for the uploaded files: 50MB -->
+      <parameter key="MultipartParserMaxSize">200000000</parameter>
+    </configfile>
+    <configfile name="admin/admin.properties">
+      <parameter key="GroupSynchroCron">0,10,20,30,40,50 * * * *</parameter>
+    </configfile>
+    <configfile name="peasCore/SessionManager.properties">
+      <!-- session time-out : 3 hours for the users et 6 hours for the administrators -->
+      <parameter key="adminSessionTimeout">360</parameter>
+      <parameter key="userSessionTimeout">180</parameter>
+    </configfile>
+    <configfile name="notificationManager/settings/notificationManagerSettings.properties">
+      <parameter key="multiChannelNotification">true</parameter>
+      <parameter key="notif.defaultChannels">BASIC_SILVERMAIL BASIC_SMTP_MAIL</parameter>
+    </configfile>
+    <configfile name="jobStartPagePeas/settings/jobStartPagePeasSettings.properties">
+      <parameter key="quota.space.components.activated">true</parameter>
+      <parameter key="quota.space.datastorage.activated">true</parameter>
+      <parameter key="quota.space.datastorage.default.maxCount">4096</parameter>
+      <parameter key="quota.personalspace.datastorage.default.maxCount">10</parameter>
+    </configfile>
+  </fileset>
 
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="kmax.xml">
+      <parameter key="//WAComponent/visible" mode="update">
+        <value>false</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="toolbox.xml">
+      <parameter key="//WAComponent/visible" mode="update">
+        <value>false</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="rssAgregator.xml">
+      <parameter key="/WAComponent/visibleInPersonalSpace">false</parameter>
+      <parameter key="/WAComponent/portlet">false</parameter>
+    </xmlfile>
   </fileset>
 
 </silverpeas-settings>

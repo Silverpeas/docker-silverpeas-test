@@ -1,0 +1,46 @@
+<p>The back office is only accessible to general administrators and, in part, to space administrators. Administration of SILVERPEAS does not require technical knowledge. It&#39;s accessible to non-IT users thanks to a simple and ergonomic interface, consistent with that of the front office. Each page has breadcrumbs and the menu : What do you want to do?</p>
+
+<p>The administration provides the following services:</p>
+
+<p>(*) Items marked with an asterisk are accessible to space administrators.</p>
+
+<p><strong>Users &amp; Spaces</strong></p>
+
+<ul>
+	<li>Management of domains, users and groups</li>
+	<li>Summary of rights for a user or group</li>
+	<li>Management of spaces and applications *</li>
+	<li>Search in the back office</li>
+</ul>
+
+<p><strong>Classification / Taxonomy</strong></p>
+
+<ul>
+	<li>Axis management</li>
+	<li>Management of vocabularies and synonyms</li>
+</ul>
+
+<p><strong>Statistics *</strong></p>
+
+<ul>
+	<li>Connections</li>
+	<li>Entries</li>
+	<li>Volumes</li>
+	<li>Taxonomy</li>
+</ul>
+
+<p><strong>Tools</strong></p>
+
+<ul>
+	<li>Import engine</li>
+	<li>Workflow designer</li>
+	<li>Form designer</li>
+	<li>Log console</li>
+	<li>Reindexing</li>
+	<li>Logs</li>
+	<li>Variables</li>
+	<li>Documents template</li>
+	<li>Content Encryption<a href="javascript:void(0)" onclick="spAdminWindow.loadOperation(50)">&nbsp;</a></li>
+</ul>
+
+<p>&nbsp;</p>
