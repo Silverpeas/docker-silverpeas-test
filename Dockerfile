@@ -75,7 +75,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.4.5
+ARG SILVERPEAS_VERSION=6.4.6
 ARG WILDFLY_VERSION=26.1.3
 
 LABEL org.opencontainers.image.vendor="Silverpeas" \
