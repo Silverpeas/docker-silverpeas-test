@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
@@ -75,8 +75,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 ENV SILVERPEAS_HOME /opt/silverpeas
 ENV JBOSS_HOME /opt/wildfly
 
-ARG SILVERPEAS_VERSION=6.4.2-SNAPSHOT
-ARG WILDFLY_VERSION=26.1.3
+ARG SILVERPEAS_VERSION=6.5-SNAPSHOT
+ARG WILDFLY_VERSION=34.0.1
 
 LABEL org.opencontainers.image.vendor="Silverpeas" \
       org.opencontainers.image.authors="Miguel Moquillon <miguel.moquillon@silverpeas.org>" \
